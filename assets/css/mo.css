@@ -1,0 +1,108 @@
+/*--------------------------------------------------------------------------------------*/
+/*----------██╗██╗-----███████╗███╗███╗---███╗ ██████╗ ███╗███╗---██╗███████╗██╗--------*/
+/*---------██╔╝██║-----██╔════╝██╔╝████╗ ████║██╔═══██╗╚██║████╗--██║██╔════╝-██╗-------*/
+/*--------██╔╝-██║-----█████╗--██║ ██╔████╔██║██║---██║ ██║██╔██╗-██║███████╗--██╗------*/
+/*-------██╔╝--██║-----██╔══╝--██║ ██║╚██╔╝██║██║---██║ ██║██║╚██╗██║╚════██║---██╗-----*/
+/*------██╔╝---███████╗███████╗███╗██║-╚═╝-██║╚██████╔╝███║██║-╚████║███████║----██╗----*/
+/*------╚═╝----╚══════╝╚══════╝╚══╝╚═╝-----╚═╝-╚═════╝-╚══╝╚═╝--╚═══╝╚══════╝----╚═╝----*/
+/*---------------------------------------v3.1-------------------------------------------*/
+/*----------------------NGUUUUUUUUEEEEEEEEEEEENNNNNNNNNNNNNNNNGGGGGG--------------------*/
+
+
+/*FillViewPort*/
+.MoFullV{position: fixed;width: 100vw;height: 100vh;left: 0;top: 0;}
+
+/*FillContainer*/
+.MoFullC{position: absolute;width: 100%;height: 100%;left: 0;top: 0;}
+
+/*ContentCenter*/
+.MoCenterC{display: table-cell; vertical-align: middle; align-content: center; text-align: center;}
+
+/*ButtonRound*/
+.MoBRd{border-radius: 50%;}
+
+/*ButtonSquare*/
+.MoBSq{border-radius: 0%;}
+
+/*ButtonAll*/
+.MoBSq,.MoBRd{
+	color: #fff;
+	border: 0;
+	background: none;
+	box-shadow:none;
+	padding: 7px;
+	background-color: #808080FF;
+}
+.MoBSq:active,.MoBSq.active,.MoBSq[active="true"],.MoBRd:active,.MoBRd.active,.MoBRd[active="true"]{
+	box-shadow: 2px 2px 15px black inset;
+	background-color: #404040FF;
+	opacity: 1;
+}
+.MoBSq:hover,.MoBSq.hover,.MoBRd:hover,.MoBRd.hover{cursor: pointer;opacity: 0.7;}
+
+.MoBSq:disabled,.MoBSq.disabled,.MoBRd:disabled,.MoBRd.disabled{cursor: not-allowed;}
+
+/* Form Input */
+.MoInput {
+	border: 1px solid rgba(0,0,0,0);
+	padding: 5px 7px;
+	margin: 3px;
+}
+.MoInput:active,.MoInput.active,.MoInput:focus,.MoInput.focus{
+	border: 1px solid #404040FF;
+	background-color: rgb(226, 224, 224);
+}
+
+/*Color*/
+.MoBgBlack{background-color: #000000; color: #fff;}.MoBgBlack:active,.MoBgBlack.active,.MoBgBlack[active="true"]{background-color: #333333;}
+.MoBgRed{background-color: #FF0000; color: #fff;}.MoBgRed:active,.MoBgRed.active,.MoBgRed[active="true"]{background-color: #B60000;}
+.MoBgBlue{background-color: #004AFF; color: #fff;}.MoBgBlue:active,.MoBgBlue.active,.MoBgBlue[active="true"]{background-color: #0000FF;}
+.MoBgSky{background-color: rgb(0, 174, 255); color: #fff;}.MoBgSky:active,.MoBgSky.active,.MoBgSky[active="true"]{background-color: rgb(0, 110, 255);}
+.MoBgGreen{background-color: #2ACD1F; color: #fff;}.MoBgGreen:active,.MoBgGreen.active,.MoBgGreen[active="true"]{background-color: #2A931F;}
+.MoBgOrange{background-color: #FFA200FF; color: #fff;}.MoBgOrange:active,.MoBgOrange.active,.MoBgOrange[active="true"]{background-color: #FF6A00;}
+.MoBgGrey{background-color: #808080FF; color: #fff;}.MoBgGrey:active,.MoBgGrey.active,.MoBgGrey[active="true"]{background-color: #404040FF;}
+
+/*Text Utility*/
+.MoBlockSelect{
+	-webkit-touch-callout : none;
+	-webkit-user-select : none;
+	-khtml-user-select : none;
+	-moz-user-select : none;
+	-ms-user-select : none;
+	user-select : none;
+}
+
+/*ForPluginImageSlider*/
+.MoImgSld{
+	position:absolute; 
+	height:100%; 
+	width: 30px; 
+	cursor:pointer;
+	color:#EEEEEE;
+	font-size:20px;
+	opacity: 0.1;
+}
+.MoImgSldBtm{
+	position : absolute;
+	height : 30px;
+	bottom : 0;
+	left : 30px;
+	right : 30px;
+	text-align : center;
+	opacity : 0.1;
+	background : radial-gradient(circle, rgba(0,0,0,1), rgba(0,0,0,0));
+}
+.MoBtnNav{
+	border-radius : 100%;
+	width : 10px;
+	height : 10px;
+	border : none;
+	margin-top : 15px;
+	background : #EEEEEE;
+	cursor : pointer;
+}
+.MoImgSldBtm:hover{opacity: 0.7;}
+.MoImgSld:hover{opacity: 0.7;}
+.MoImgSldLft{left: 0; background: linear-gradient(90deg, rgba(0,0,0,1), rgba(0,0,0,0));}
+.MoImgSldRgt{right: 0; background: linear-gradient(-90deg, rgba(0,0,0,1), rgba(0,0,0,0));}
+.MoImgSldSpan{position:absolute; text-align:center; top:45%; width:100%;}
