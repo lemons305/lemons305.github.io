@@ -59,7 +59,8 @@ body {
 	padding: 20px;
 	background-repeat: no-repeat;
 	background-position: center; 
-	height:200px;
+	background-size: cover;
+	height:350px;
 }
 
 /* Add a card effect for articles */
