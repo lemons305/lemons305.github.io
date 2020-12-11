@@ -57,6 +57,10 @@ body {
 	background-color: #aaa;
 	width: 100%;
 	padding: 20px;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center; 
+	height:200px;
 }
 
 /* Add a card effect for articles */
@@ -90,4 +94,10 @@ body {
 	.hdTxt::before{
 		content: "L B";
 	}
+}
+
+.rmButton{
+	position: absolute;
+	right: 12px;
+	bottom: 12px;
 }
