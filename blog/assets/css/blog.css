@@ -101,3 +101,8 @@ body {
 	right: 12px;
 	bottom: 12px;
 }
+
+.openPost{
+	color: slategrey;
+	cursor: pointer;
+}
