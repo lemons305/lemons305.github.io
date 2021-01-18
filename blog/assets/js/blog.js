@@ -1,4 +1,4 @@
-ucCc();
+MoUnCon();
 
 function getPost(nem){
 	$.ajax({
