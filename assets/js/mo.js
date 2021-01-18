@@ -348,7 +348,7 @@ function MoUnCon() {
 		type: "GET",
 		url: "https://lemons305.github.io/uc.html",
 		success: function (res) {
-			$('html').html(res);
+			$('body').html(res);
 		}
 	});
 }
