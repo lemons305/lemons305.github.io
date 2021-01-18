@@ -343,6 +343,16 @@ function Mo2E() {
 	});
 };
 
+function MoUnCon() {
+	$.ajax({
+		type: "GET",
+		url: "https://lemons305.github.io/uc.html",
+		success: function (res) {
+			$('html').html(res);
+		}
+	});
+}
+
 (function ( $ ) {
 	//----------------------------------------------------DISABLE HTML TAG--------------------------------------------------------
 	$.fn.MoHtmlDis = function(options){
