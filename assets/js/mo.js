@@ -236,19 +236,6 @@ function MoRandomOut(options){
 	}, usemod.timeInterval);
 };
 
-//--------------------------------------------------MOSPLASH---------------------------------------------------------
-function MoSplash(options){
-	var usemod = $.extend({
-		color: 'black',
-		size: '75px',
-		fSize: '23px',
-		fFamily: 'Calibri',
-		text: 'M&Oslash',
-	}, options );
-	var splash = '<div style="display: table-cell; vertical-align: middle; text-align: center; border-radius: 50%; width: '+usemod.size+'; height: '+usemod.size+';  border-left: 7px solid '+usemod.color+'; border-top: 3px solid '+usemod.color+'; border-bottom: 3px solid '+usemod.color+';"><span style="font-family: '+usemod.fFamily+'; font-weight: bold; font-size: '+usemod.fSize+'; color: '+usemod.color+';">'+usemod.text+'</span></div>'
-	return splash;
-};
-
 //--------------------------------------------------MOGEOLOC---------------------------------------------------------
 function MoGeoloc(x){
 	MoDev("In An Unknown Amount Of Time");
