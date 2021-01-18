@@ -1,3 +1,5 @@
+ucCc();
+
 function getPost(nem){
 	$.ajax({
 		type: "GET",
