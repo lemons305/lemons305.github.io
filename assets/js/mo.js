@@ -8,10 +8,6 @@
 /*---------------------------------------v3.1-------------------------------------------*/
 /*----------------------NGUUUUUUUUEEEEEEEEEEEENNNNNNNNNNNNNNNNGGGGGG--------------------*/
 
-//---------------------------------------------------PLUGIN IN DEVELOPMENT------------------------------------------------
-function MoDev(timeremain){
-	console.log("We're Sorry \n This Plugin Is Still On Development \n This Plugin Will Be Ready "+timeremain+" ¯\\_(ツ)_/¯ \n Well... It Won't take long [I Hope]");
-}
 
 //---------------------------------------------------RANDOM ALPHABET------------------------------------------------
 function MoRandAlp(count) {
@@ -234,35 +230,6 @@ function MoRandomOut(options){
 		var ranChc = Math.floor(Math.random()*usemod.randword.length);
 		randplace(usemod.randword[ranChc]);
 	}, usemod.timeInterval);
-};
-
-//--------------------------------------------------MOGEOLOC---------------------------------------------------------
-function MoGeoloc(x){
-	MoDev("In An Unknown Amount Of Time");
-	// getLocation();
-	// function getLocation() {
-	// 	if (navigator.geolocation) {
-	// 		navigator.geolocation.getCurrentPosition(showPosition);
-	// 	} else { 
-	// 		x.html = "Geolocation is not supported by this browser.";
-	// 	}
-	// }
-	
-	// function showPosition(position) {
-	// 	x.html = "Latitude: " + position.coords.latitude + 
-	// 	"<br>Longitude: " + position.coords.longitude;
-	// 	console.log(position);
-	// }
-};
-
-//--------------------------------------------------MOLOADPAGE---------------------------------------------------------
-function MoPageLoading(){
-	MoDev("In An Unknown Amount Of Time");
-	// var superDiv = '<div class="MoFullV MoCGreen" id="adafaekfame1231453513536kfmaekfmasjkaf"></div>';
-	// $('body').prepend(superDiv);
-	// $(document).ready(function() {
-	// 	$('#adafaekfame1231453513536kfmaekfmasjkaf').remove();
-	// });
 };
 
 //--------------------------------------------------MOFLIP---------------------------------------------------------
