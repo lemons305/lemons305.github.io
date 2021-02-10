@@ -16,7 +16,7 @@
 .MoFullC{position: absolute;width: 100%;height: 100%;left: 0;top: 0;}
 
 /*ContentCenter*/
-.MoCenterC{position: absolute; top: 50%; left: 50%; margin: -25px 0 0 -25px;}
+.MoCenterC{margin: auto; text-align: center;}
 
 /*ButtonRound*/
 .MoBRd{border-radius: 50%;}
