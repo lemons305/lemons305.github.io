@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MOMOMOMOMOMO</title>
+
+	<style>
+		
+
+		.neonText {
+		color: #fff;
+		text-shadow:
+			0 0 7px #fff,
+			0 0 10px #fff,
+			0 0 21px #fff,
+			0 0 42px #0fa,
+			0 0 82px #0fa,
+			0 0 92px #0fa,
+			0 0 102px #0fa,
+			0 0 151px #0fa;
+		}
+
+		h1 {
+		font-size: 4.2rem;
+		animation: flicker 1.5s infinite alternate;     
+		}
+
+		/* Flickering animation */
+		@keyframes flicker {
+			
+		0%, 18%, 22%, 25%, 53%, 57%, 100% {
+
+			text-shadow:
+			0 0 4px #fff,
+			0 0 11px #fff,
+			0 0 19px #fff,
+			0 0 40px #0fa,
+			0 0 80px #0fa,
+			0 0 90px #0fa,
+			0 0 100px #0fa,
+			0 0 150px #0fa;
+		
+		}
+		
+		20%, 24%, 55% {        
+			text-shadow: none;
+		}    
+		}
+
+
+		/* Additional styling */
+		
+		h2 {
+		font-size: 1.8rem;
+		}
+		.container {
+		margin-top: 5vh;
+		}
+
+		body {
+		font-size: 18px;
+		font-family: "Helvetica Neue", sans-serif;
+		background-color: #010a01;
+		}  
+
+		h1, h2 {
+		text-align: center;
+		text-transform: uppercase;
+		font-weight: 400;
+		}
+
+
+	</style>
+</head>
+<body style="font-family: monospace;color: lightgray;">
+	
+
+	<div class="container">
+		<h1 class="neonText">
+			MADE BY MO
+		</h1>
+		<h2 class="neonText">SIMPLE RSA ALGORITHM</h2>
+	</div>
+
+
+	<p>p = bilangan prima</p>
+	<p>q = bilangan prima selain p</p>
+	<p>n = p x q</p>
+	<p>l = lcm(p − 1, q − 1)</p>
+	<p>e = koprima dari l</p>
+	<p>1 = e x d mod λ(n)</p>
+	<hr>
+	p = <input type="number" class="p"><br>
+	q = <input type="number" class="q"><br>
+	<hr>
+	text = <input type="text" class="t">
+	<br>
+	<br>
+	<button id="clickmetodostuff">DO STUFF</button>
+	<hr>
+	<p id="bp"></p>
+	<p id="bq"></p>
+	<p id="bn"></p>
+	<p id="bl"></p>
+	<p id="be"></p>
+	<p id="bd"></p>
+	<p id="pbkey"></p>
+	<p id="pvkey"></p>
+	<hr>
+	<pre id="asciigoeshere"></pre>
+	<hr>
+	Encrypt
+	<br>
+	<pre id="asciiencgoeshere"></pre>
+	<hr>
+	Decrypt
+	<br>
+	<pre id="asciidecgoeshere"></pre>
+	<hr>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script src="https://reallifejs.com/demos/calculator/biginteger.js"></script>
+	<script>
+		// var bigInt = require("big-integer");
+
+		var arr = [];
+		var arrEnc = [];
+		var arrDec = [];
+		function asciiconv1(t) {
+			var hau = '';
+			$('#asciigoeshere').html(hau);
+			for (var i = 0; i < t.length; i++) {
+				var a = t.charCodeAt(i);
+				hau+=(t[i]+' = '+("000" + a).slice(-3)+'<br>');
+				arr.push(a);
+			}
+			$('#asciigoeshere').html(hau);
+			console.log(arr);
+		}
+
+		function asciicalcenc(t,e,n) {
+			var hau = '';
+			$('#asciiencgoeshere').html(hau);
+			var bi = BigInteger;
+			bi.prototype.valueOf = bi.prototype.toString;
+			for (var i = 0; i < arr.length; i++) {
+				var z = bi.remainder(bi.pow(arr[i],e),n);
+				hau+=(t[i]+' => '+arr[i]+'<sup>'+e+'</sup> mod '+n+' = '+z+'<br>');
+				arrEnc.push(z);
+			}
+			$('#asciiencgoeshere').html(hau);
+			console.log(arrEnc);
+		}
+
+		function asciicalcdec(t,d,n) {
+			var hau = '';
+			$('#asciidecgoeshere').html(hau);
+			var bi = BigInteger;
+			bi.prototype.valueOf = bi.prototype.toString;
+			for (var i = 0; i < arrEnc.length; i++) {
+				var z = bi.remainder(bi.pow(arrEnc[i],d),n);
+				hau+=(arrEnc[i]+'<sup>'+d+'</sup> mod '+n+' = '+z+' => '+String.fromCharCode(z)+'<br>');
+				arrDec.push(z);
+			}
+			$('#asciidecgoeshere').html(hau);
+			console.log(arrDec);
+		}
+
+		function coprimeKah(num1, num2) {
+			var smaller = num1 > num2 ? num1 : num2;
+			for(var ind = 2; ind < smaller; ind++){
+				var condition1 = num1 % ind === 0;
+				var condition2 = num2 % ind === 0;
+				if(condition1 && condition2){
+					return false;
+				};
+			};
+			return true;
+		};
+
+		$(document).ready(function () {
+			$('#clickmetodostuff').click(function () {
+				arr = [];
+				arrEnc = [];
+				arrDec = [];
+				var p = $('.p').val();
+				var q = $('.q').val();
+
+				var t = $('.t').val();
+
+				asciiconv1(t);
+
+				//n
+				n = p*q;
+
+				//l
+				var num1 = Number(p)-1;
+				var num2 = Number(q)-1;
+				var min = (num1 > num2) ? num1 : num2;
+				while (true) {
+					if (min % num1 == 0 && min % num2 == 0) {
+						l = min
+						break;
+					}
+					min++;
+				} 
+
+				//e
+				var cpr = 2;
+				while (true) {
+					if (coprimeKah(cpr,l)) {
+						e = cpr
+						break;
+					}
+					cpr++;
+				} 
+				e=17
+
+				//d
+				var mmi = 1;
+				while (true) {
+					if ((e*mmi)%l == 1) {
+						d = mmi
+						break;
+					}
+					mmi++;
+				} 
+
+				$('#bp').html('p : '+p+'<br>')
+				$('#bq').html('q : '+q+'<br>')
+				$('#bn').html('n : '+n+'<br>')
+				$('#bl').html('l : '+l+'<br>')
+				$('#be').html('e : '+e+'<br>')
+				$('#bd').html('d : '+d+'<br>')
+				$('#pbkey').html('public key = m<sup>'+e+'</sup> mod '+n+'<br>')
+				$('#pvkey').html('private key = c<sup>'+d+'</sup> mod '+n+'<br>')
+
+				asciicalcenc(t,e,n)
+				asciicalcdec(t,d,n)
+			});
+		});
+	</script>
+</body>
+</html>
