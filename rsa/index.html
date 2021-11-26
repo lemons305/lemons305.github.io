@@ -136,7 +136,8 @@
 				hau+=(t[i]+' = '+("000" + a).slice(-3)+'<br>');
 				arr.push(a);
 			}
-			$('#asciigoeshere').html(hau);
+			var aj = arr.join(' ');
+			$('#asciigoeshere').html(hau+'<br>'+aj);
 			console.log(arr);
 		}
 
@@ -150,7 +151,8 @@
 				hau+=(t[i]+' => '+arr[i]+'<sup>'+e+'</sup> mod '+n+' = '+z+'<br>');
 				arrEnc.push(z);
 			}
-			$('#asciiencgoeshere').html(hau);
+			var aj = arrEnc.join(' ');
+			$('#asciiencgoeshere').html(hau+'<br>'+aj);
 			console.log(arrEnc);
 		}
 
@@ -164,7 +166,8 @@
 				hau+=(arrEnc[i]+'<sup>'+d+'</sup> mod '+n+' = '+z+' => '+String.fromCharCode(z)+'<br>');
 				arrDec.push(z);
 			}
-			$('#asciidecgoeshere').html(hau);
+			var aj = arrDec.join(' ');
+			$('#asciidecgoeshere').html(hau+'<br>'+aj);
 			console.log(arrDec);
 		}
 
